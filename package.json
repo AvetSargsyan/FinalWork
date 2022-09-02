@@ -1,0 +1,30 @@
+{
+  "name": "finalwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx wdio run wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AvetSargsyan/FinalWork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AvetSargsyan/FinalWork/issues"
+  },
+  "homepage": "https://github.com/AvetSargsyan/FinalWork#readme",
+  "devDependencies": {
+    "@wdio/local-runner": "^7.23.0",
+    "@wdio/mocha-framework": "^7.23.0",
+    "@wdio/spec-reporter": "^7.23.0",
+    "chromedriver": "^104.0.0",
+    "wdio-chromedriver-service": "^7.3.2"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.4.0"
+  }
+}
