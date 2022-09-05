@@ -1,18 +1,19 @@
 /*"use strict";
+const SearchPage = require("../pageobjects/searchPage");
 const CloudPage = require("../pageobjects/googleCloudPage");
 
 describe("'Hurt me plenty' task", () => {
   it("Should find the field, then add text, and enter", async () => {
-    await CloudPage.open();
+    await SearchPage.open();
     await browser.fullscreenWindow();
-    await CloudPage.searchBtn.click();
-    await CloudPage.searchBtn.addValue(
+    await SearchPage.searchBtn.click();
+    await SearchPage.searchBtn.addValue(
       "Google Cloud Platform Pricing Calculator"
     );
     await browser.keys("Enter");
   });
   it("Should open calculator page", async () => {
-    await CloudPage.calcPagePlatformLink.click();
+    await SearchPage.calcPagePlatformLink.click();
   });
   it("Should activate 'COMPUTE ENGINE' section ", async () => {
     await browser.fullscreenWindow();

@@ -1,22 +1,23 @@
 "use strict";
+const SearchPage = require("../pageobjects/searchPage");
 const CloudPage = require("../pageobjects/googleCloudPage");
-const assert = require("assert")
+const TenMinuteMailPage = require("../pageobjects/tenMinuteMailPage");
 
 describe("'Hardcore' task", () => {
   afterEach(async () => {
     await browser.pause(1000);
   });
   it("Should find the field, then add text, and enter", async () => {
-    await CloudPage.open();
+    await SearchPage.open();
     await browser.fullscreenWindow();
-    await CloudPage.searchBtn.click();
-    await CloudPage.searchBtn.addValue(
+    await SearchPage.searchBtn.click();
+    await SearchPage.searchBtn.addValue(
       "Google Cloud Platform Pricing Calculator"
     );
     await browser.keys("Enter");
   });
   it("Should open calculator page", async () => {
-    await CloudPage.calcPagePlatformLink.click();
+    await SearchPage.calcPagePlatformLink.click();
   });
   it("Should activate 'COMPUTE ENGINE' section ", async () => {
     await browser.fullscreenWindow();
@@ -82,10 +83,10 @@ describe("'Hardcore' task", () => {
 
   it("Should wait the letter with the cost calculation and check that the Total Estimated Monthly Cost in the letter matches what is displayed in the calculator", async () => {
     const calcPageUrl = await browser.getTitle();
-    const costPerMonth = await CloudPage.checkCostPerMonth.getText();
-    await browser.newWindow(CloudPage.tenMinuteMailUrl);
-    const temporaryMail = await CloudPage.tenMinuteMail.getText();
-    await CloudPage.emailCopyBtn.click();
+    let costPerMonth = await CloudPage.checkCostPerMonth.getText();
+    await browser.newWindow(TenMinuteMailPage.tenMinuteMailUrl);
+    const temporaryMail = await TenMinuteMailPage.tenMinuteMail.getText();
+    //await CloudPage.emailCopyBtn.click();
     await browser.pause(2000);
     await browser.switchWindow(calcPageUrl);
     await browser.fullscreenWindow();
@@ -95,22 +96,26 @@ describe("'Hardcore' task", () => {
     await browser.switchToFrame(frame2);
     await CloudPage.emailBtn.click();
     await CloudPage.emailField.setValue(temporaryMail);
-    //await expect(CloudPage.sendEmailBtn).toBeExisting()
+    await browser.pause(1000);
     await CloudPage.sendEmailBtn.click();
     await browser.pause(1000);
-    await browser.switchWindow(CloudPage.tenMinuteMailUrl);
+    await browser.switchWindow(TenMinuteMailPage.tenMinuteMailUrl);
     await browser.pause(5000);
     await browser.pause(9000);
-    await expect(CloudPage.letter).toBeExisting();
-    await CloudPage.letter.click();
+    await expect(TenMinuteMailPage.letter).toBeExisting();
+    await TenMinuteMailPage.letter.click();
     await browser.pause(2000);
-    const frame3 = await CloudPage.tenMinutemailFrame
-    await browser.switchToFrame(frame3)
-    await expect(CloudPage.costInLetter).toBeExisting()
-    const costPerMonthInLetter = await CloudPage.costInLetter.getText();
-    await console.log(costPerMonth, costPerMonthInLetter);
+    const frame3 = await TenMinuteMailPage.tenMinutemailFrame;
+    await browser.switchToFrame(frame3);
+    await expect(TenMinuteMailPage.costInLetter).toBeExisting();
+    let costPerMonthInLetter = await TenMinuteMailPage.costInLetter.getText();
+    await console.log(
+      "---------------------" + costPerMonth + "---------------------"
+    );
+    await console.log(
+      "---------------------" + costPerMonthInLetter + "---------------------"
+    );
     await expect(costPerMonth).toHaveTextContaining(costPerMonthInLetter);
-    //await assert.equal(costPerMonth,"USD 1,081.20")
     await browser.pause(2000);
   });
 });
