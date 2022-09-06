@@ -2,6 +2,7 @@
 const SearchPage = require("../pageobjects/searchPage");
 const CloudPage = require("../pageobjects/googleCloudPage");
 const TenMinuteMailPage = require("../pageobjects/tenMinuteMailPage");
+const assert = require("assert");
 
 describe("'Hardcore' task", () => {
   afterEach(async () => {
@@ -80,13 +81,11 @@ describe("'Hardcore' task", () => {
   it("Should click button 'Add to estimate'", async () => {
     await CloudPage.addToEstimateBtn.click();
   });
-
   it("Should wait the letter with the cost calculation and check that the Total Estimated Monthly Cost in the letter matches what is displayed in the calculator", async () => {
+    const costPerMonth = await CloudPage.checkCostPerMonth.getText();
     const calcPageUrl = await browser.getTitle();
-    let costPerMonth = await CloudPage.checkCostPerMonth.getText();
     await browser.newWindow(TenMinuteMailPage.tenMinuteMailUrl);
     const temporaryMail = await TenMinuteMailPage.tenMinuteMail.getText();
-    //await CloudPage.emailCopyBtn.click();
     await browser.pause(2000);
     await browser.switchWindow(calcPageUrl);
     await browser.fullscreenWindow();
@@ -108,14 +107,8 @@ describe("'Hardcore' task", () => {
     const frame3 = await TenMinuteMailPage.tenMinutemailFrame;
     await browser.switchToFrame(frame3);
     await expect(TenMinuteMailPage.costInLetter).toBeExisting();
-    let costPerMonthInLetter = await TenMinuteMailPage.costInLetter.getText();
-    await console.log(
-      "---------------------" + costPerMonth + "---------------------"
-    );
-    await console.log(
-      "---------------------" + costPerMonthInLetter + "---------------------"
-    );
-    await expect(costPerMonth).toHaveTextContaining(costPerMonthInLetter);
+    const costPerMonthInLetter = await TenMinuteMailPage.costInLetter.getText();
+    await assert.strictEqual(costPerMonth.slice(22, 34), costPerMonthInLetter); //This not working  ->  await expect(costPerMonth).toHaveText(costPerMonthInLetter);
     await browser.pause(2000);
   });
 });

@@ -6,7 +6,7 @@ class TenMinuteMailPage {
     return $("//*[@id='email']");
   }
   get tenMinutemailFrame() {
-    return $("//*[@id='iframeMail']");
+    return $("/html/body/div[1]/div[3]/div/div[2]/div/div/iframe");
   }
   get letter() {
     return $(
@@ -14,7 +14,7 @@ class TenMinuteMailPage {
     );
   }
   get costInLetter() {
-    return $("/html/body/div/table/tbody/tr[2]/td/table/tbody/tr[2]/td[2]/h3");
+    return $("#mobilepadding > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > h3");
   }
 }
 

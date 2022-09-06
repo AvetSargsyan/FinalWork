@@ -1,4 +1,4 @@
-/*"use strict";
+"use strict";
 const SearchPage = require("../pageobjects/searchPage");
 const CloudPage = require("../pageobjects/googleCloudPage");
 
@@ -97,7 +97,6 @@ describe("'Hurt me plenty' task", () => {
     await expect(CloudPage.checkCostPerMonth).toHaveTextContaining(
       "USD 1,081.20 per 1 month"
     );
-    await browser.pause(8000);
+    await browser.pause(3000);
   });
 });
-*/

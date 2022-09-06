@@ -1,30 +1,33 @@
 {
   "name": "finalwork",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js"
+    "test": "wdio wdio.conf.js",
+    "testOne": "wdio wdio.conf.js --spec ./test/specs/HurtMePlenty.js",
+    "testTwo": "wdio wdio.conf.js --spec ./test/specs/Hardcore.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AvetSargsyan/FinalWork.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["epamFinalTask"],
+  "author": "Avet Sargsyan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AvetSargsyan/FinalWork/issues"
   },
   "homepage": "https://github.com/AvetSargsyan/FinalWork#readme",
   "devDependencies": {
-    "@wdio/local-runner": "^7.23.0",
-    "@wdio/mocha-framework": "^7.23.0",
-    "@wdio/spec-reporter": "^7.23.0",
+    "@wdio/allure-reporter": "^7.24.0",
+    "@wdio/local-runner": "^7.24.0",
+    "@wdio/mocha-framework": "^7.24.0",
+    "@wdio/spec-reporter": "^7.24.0",
     "chromedriver": "^104.0.0",
     "wdio-chromedriver-service": "^7.3.2"
   },
   "dependencies": {
+    "allure-commandline": "^2.18.1",
     "selenium-webdriver": "^4.4.0"
   }
 }
