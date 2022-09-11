@@ -1,4 +1,4 @@
-const  Page =require("./page")
+const Page = require("./page");
 
 class CloudPage extends Page {
   get computeEngine() {
@@ -13,69 +13,95 @@ class CloudPage extends Page {
     return $("//iframe[@id='myFrame']");
   }
   get instancesNum() {
-    return $("//*[@id='input_89']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[1]/div[1]/md-input-container/input"
+    );
   }
   get whatFor() {
-    return $("//*[@id='input_90']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[2]/div[1]/md-input-container/input"
+    );
   }
   get os() {
-    return $("//*[@id='select_value_label_81']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[3]/div[1]/md-input-container/md-select/md-select-value/span[1]/div"
+    );
   }
   get free() {
-    return $("//*[@id='select_option_91']");
+    return $("/html/body/div[3]/md-select-menu/md-content/md-option[1]/div");
   }
   get vmClass() {
-    return $("//*[@id='select_value_label_82']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[4]/div[1]/md-input-container/md-select/md-select-value"
+    );
   }
   get regular() {
-    return $("//*[@id='select_option_104']");
+    return $("/html/body/div[4]/md-select-menu/md-content/md-option[1]");
   }
   get series() {
-    return $("//*[@id='select_value_label_84']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[6]/div[1]/md-input-container/md-select/md-select-value"
+    );
   }
   get n1() {
-    return $("//*[@id='select_option_199']");
+    return $("/html/body/div[5]/md-select-menu/md-content/md-option[1]");
   }
   get instanceType() {
-    return $("//*[@id='select_value_label_85']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[7]/div[1]/md-input-container/md-select/md-select-value"
+    );
   }
   get n1_standart() {
-    return $("//*[@id='select_option_423']");
+    return $(
+      "/html/body/div[6]/md-select-menu/md-content/md-optgroup[3]/md-option[4]/div"
+    );
   }
   get addGPUBtn() {
     return $(
-      "//*[@id='mainForm']/div[2]/div/md-card/md-card-content/div/div[1]/form/div[13]/div[1]/md-input-container/md-checkbox/div[1]"
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[13]/div[1]/md-input-container/md-checkbox/div[1]"
     );
   }
   get typeOfGPU() {
-    return $("//*[@id='select_461']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[14]/div/div[1]/div[1]/md-input-container[1]/md-select"
+    );
   }
   get teslaV100() {
-    return $("//*[@id='select_option_468']/div[1]");
+    return $("/html/body/div[7]/md-select-menu/md-content/md-option[4]/div");
   }
   get numsOfGPU() {
-    return $("//*[@id='select_463']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[14]/div/div[1]/div[1]/md-input-container[2]/md-select/md-select-value/span[1]"
+    );
   }
   get one() {
-    return $("//*[@id='select_option_472']");
+    return $("/html/body/div[8]/md-select-menu/md-content/md-option[2]/div");
   }
   get localSSD() {
-    return $("//*[@id='select_value_label_417']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[15]/div[1]/md-input-container/md-select/md-select-value"
+    );
   }
   get twoX475gb() {
-    return $("//*[@id='select_option_444']/div");
+    return $("/html/body/div[9]/md-select-menu/md-content/md-option[3]/div");
   }
   get dataCenterLocation() {
-    return $("//*[@id='select_value_label_87']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[16]/div[1]/md-input-container/md-select/md-select-value"
+    );
   }
   get frankfurt() {
-    return $("//*[@id='select_option_226']");
+    return $(
+      "/html/body/div[10]/md-select-menu/md-content/md-optgroup/md-option[12]"
+    );
   }
   get comitedUsage() {
-    return $("//*[@id='select_value_label_88']");
+    return $(
+      "/html/body/md-content/md-card/div/md-card-content[1]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[19]/div[1]/md-input-container/md-select/md-select-value"
+    );
   }
   get oneYear() {
-    return $("//*[@id='select_option_127']");
+    return $("/html/body/div[11]/md-select-menu/md-content/md-option[2]");
   }
   get addToEstimateBtn() {
     return $(
@@ -112,9 +138,8 @@ class CloudPage extends Page {
       "/html/body/md-content/md-card/div/md-card-content[2]/md-card/md-card-content/div/div/div/h2/b"
     );
   }
-
   get emailCopyBtn() {
-    return $("/html/body/div[2]/div[2]/div[1]/div[3]/a[5] ");
+    return $("/html/body/div[2]/div[2]/div[1]/div[3]/a[5]");
   }
   get emailBtn() {
     return $(
@@ -127,7 +152,7 @@ class CloudPage extends Page {
     );
   }
   get sendEmailBtn() {
-    return $("//*[@id='dialogContent_545']/form/md-dialog-actions/button[2]");
+    return $("/html/body/div[9]/md-dialog/form/md-dialog-actions/button[2]");
   }
 }
 

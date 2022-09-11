@@ -1,0 +1,231 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1662905128462' stop='1662905153620'>
+    <name>'Hurt me plenty' task</name>
+    <title>'Hurt me plenty' task</title>
+    <test-cases>
+        <test-case start='1662905128462' status='passed' stop='1662905134973'>
+            <name>Should find the field, then add text, and enter</name>
+            <title>Should find the field, then add text, and enter</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905134973' status='passed' stop='1662905141193'>
+            <name>Should open calculator page</name>
+            <title>Should open calculator page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905141194' status='passed' stop='1662905141409'>
+            <name>Should activate 'COMPUTE ENGINE' section </name>
+            <title>Should activate 'COMPUTE ENGINE' section </title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905141409' status='passed' stop='1662905141486'>
+            <name>Should write '4' in 'Number of instances' field</name>
+            <title>Should write '4' in 'Number of instances' field</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905141486' status='passed' stop='1662905141595'>
+            <name>Should write 'leave blank' in section  'What are these instances for ?'</name>
+            <title>Should write 'leave blank' in section  'What are these instances for ?'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905141595' status='passed' stop='1662905141758'>
+            <name>Should select 'Free: Debian, CentOS, CoreOS, Ubuntu..' in section  'Operating System / Software'</name>
+            <title>Should select 'Free: Debian, CentOS, CoreOS, Ubuntu..' in section  'Operating System / Software'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905141758' status='passed' stop='1662905141919'>
+            <name>Should select 'Regular' in section  'VM Clas's</name>
+            <title>Should select 'Regular' in section  'VM Clas's</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905141919' status='passed' stop='1662905144269'>
+            <name>Should select 'n1-standard-8 (vCPUs: 8, RAM: 30 GB)' in section  'Instance type'</name>
+            <title>Should select 'n1-standard-8 (vCPUs: 8, RAM: 30 GB)' in section  'Instance type'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905144269' status='passed' stop='1662905144385'>
+            <name>Should select 'Add GPUs' </name>
+            <title>Should select 'Add GPUs' </title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905144385' status='passed' stop='1662905146750'>
+            <name>Should select 'NVIDIA Tesla V100' in section 'GPU type' and '1' in secton 'Number of GPUs'</name>
+            <title>Should select 'NVIDIA Tesla V100' in section 'GPU type' and '1' in secton 'Number of GPUs'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905146750' status='passed' stop='1662905147918'>
+            <name>Should select '2x375 Gb' in section  'Local SSD'</name>
+            <title>Should select '2x375 Gb' in section  'Local SSD'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905147918' status='passed' stop='1662905149119'>
+            <name>Should select 'Frankfurt' in section  'Datacenter location'</name>
+            <title>Should select 'Frankfurt' in section  'Datacenter location'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905149119' status='passed' stop='1662905150289'>
+            <name>Should select '1 Year' in section  'Commited usage'</name>
+            <title>Should select '1 Year' in section  'Commited usage'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905150289' status='passed' stop='1662905150442'>
+            <name>Should click button 'Add to estimate'</name>
+            <title>Should click button 'Add to estimate'</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905150442' status='passed' stop='1662905150596'>
+            <name>Should check the correspondence of the data</name>
+            <title>Should check the correspondence of the data</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1662905150597' status='passed' stop='1662905153619'>
+            <name>Should check that the rental amount per month matches the amount received when passing the test manually</name>
+            <title>Should check that the rental amount per month matches the amount received when passing the test manually</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.102'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

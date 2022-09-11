@@ -14,7 +14,9 @@ class TenMinuteMailPage {
     );
   }
   get costInLetter() {
-    return $("#mobilepadding > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > h3");
+    return $(
+      "#mobilepadding > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > h3"
+    );
   }
 }
 
