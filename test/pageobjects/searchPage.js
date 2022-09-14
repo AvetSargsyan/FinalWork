@@ -6,7 +6,7 @@ class SearchPage extends Page {
   }
   get calcPagePlatformLink() {
     return $(
-      "//*[@id='___gcse_0']/div/div/div/div[5]/div[2]/div/div/div[1]/div[6]/div[1]/div[1]/div/a"
+      "/html/body/section/section/main/devsite-content/article/article/div/devsite-cse/devsite-analytics-scope/div/div/div/div/div/div/div[5]/div[2]/div/div/div[1]/div[8]/div[1]/div[1]/div/a"
     );
   }
   open() {
