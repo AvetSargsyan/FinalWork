@@ -6,17 +6,13 @@ class TenMinuteMailPage {
     return $("//*[@id='email']");
   }
   get tenMinutemailFrame() {
-    return $("/html/body/div[1]/div[3]/div/div[2]/div/div/iframe");
+    return $("//iframe[@class='col-xs-12 noPadding']");
   }
   get letter() {
-    return $(
-      "/html/body/div[2]/div[3]/div[2]/div[1]/div/table/tbody/tr[3]/td[1]"
-    );
+    return $("//span[contains(text(),'Google Cloud Sales ')]");
   }
   get costInLetter() {
-    return $(
-      "#mobilepadding > td > table > tbody > tr:nth-child(2) > td:nth-child(2) > h3"
-    );
+    return $("//h3[contains(text(),'USD 1,081.20')]");
   }
 }
 
