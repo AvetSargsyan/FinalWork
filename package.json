@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio wdio.conf.js",
-    "testOne": "wdio wdio.conf.js --spec ./test/specs/HurtMePlenty.js",
-    "testTwo": "wdio wdio.conf.js --spec ./test/specs/Hardcore.js"
+    "smoke": "wdio wdio.conf.js --suite smoke",
+    "other": "wdio wdio.conf.js --suite otherFeature"
   },
   "repository": {
     "type": "git",

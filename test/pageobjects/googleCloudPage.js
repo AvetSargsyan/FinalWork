@@ -1,5 +1,5 @@
 const Page = require("./page");
-
+const computer = require("../test-data/computer")
 class CloudPage extends Page {
   get frameOne() {
     return $("//devsite-iframe/iframe");
@@ -22,62 +22,62 @@ class CloudPage extends Page {
     return $("//md-select[@aria-owns='select_container_104']");
   }
   get free() {
-    return $("//md-option[@value='free']");
+    return $(`//md-option/div[contains(text(),"${computer.os}")]`);
   }
   get vmClass() {
     return $("//md-select[@aria-owns='select_container_108']");
   }
   get regular() {
-    return $("//md-option[@value='regular']");
+    return $(`//md-option[@value='regular']/div[contains(text(),"${computer.provisioningModel}")]`); 
   }
   get series() {
     return $("//md-select[@aria-owns='select_container_116']");
   }
   get n1() {
-    return $("//div[contains(text(),'N1')]");
+    return $(`//div[contains(text(),"${computer.series}")]`);  
   }
   get instanceType() {
     return $("//md-select[@aria-owns='select_container_118']");
   }
   get n1_standart() {
-    return $("//md-option[@value='CP-COMPUTEENGINE-VMIMAGE-N1-STANDARD-8']");
+    return $(`//md-option/div[contains(text(),"${computer.instanceType}")]`);  
   }
   get addGPUBtn() {
     return $("//md-checkbox[@ng-model='listingCtrl.computeServer.addGPUs']");
   }
   get typeOfGPU() {
-    return $("//md-select[@aria-owns='select_container_466']");
+    return $("//md-select[@aria-owns='select_container_464']");
   }
   get teslaV100() {
-    return $("//md-option[@value='NVIDIA_TESLA_V100']");
+    return $(`//div[contains(text(),"${computer.type}")]`);     
   }
   get numsOfGPU() {
-    return $("//md-select[@aria-owns='select_container_468']");
+    return $("//md-select[@aria-owns='select_container_466']");
   }
   get one() {
     return $(
-      "//md-option[@ng-repeat='item in listingCtrl.supportedGpuNumbers[listingCtrl.computeServer.gpuType]'][@value='1']"
+      "//md-option[@ng-repeat='item in listingCtrl.supportedGpuNumbers[listingCtrl.computeServer.gpuType]'][@value='1']" 
     );
   }
   get localSSD() {
-    return $("//md-select[@aria-owns='select_container_423']");
+    return $("//md-select[@aria-owns='select_container_421']");                                              
   }
   get twoX475gb() {
-    return $("//md-option/div[contains(text(),'2x375 GB')]");
+    return $(`//md-option/div[contains(text(),"${computer.localSSD}")]`);
   }
   get dataCenterLocation() {
     return $("//md-select[@aria-owns='select_container_124']");
   }
   get frankfurt() {
     return $(
-      "//md-option[@ng-repeat='item in listingCtrl.fullRegionList | filter:listingCtrl.inputRegionText.computeServer']/div[contains(text(),'Frankfurt')]"
+      `//md-option[@ng-repeat='item in listingCtrl.fullRegionList | filter:listingCtrl.inputRegionText.computeServer']/div[contains(text(), "${computer.region}")]`
     );
   }
   get comitedUsage() {
     return $("//md-select[@aria-owns='select_container_131']");
   }
   get oneYear() {
-    return $("/html/body/div[11]/md-select-menu/md-content/md-option[2]");
+    return $(`//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(),"${computer.commitmentTerm}")]`);  
   }
   get addToEstimateBtn() {
     return $(
@@ -141,19 +141,19 @@ class CloudPage extends Page {
     await expect(this.checkCostPerMonth).toHaveTextContaining(costPerMonthData);
   }
   get checkVMClass() {
-    return $("//div[contains(text(),'Provisioning model: Regular')]");
+    return $(`//div[contains(text(),'Provisioning model: ${computer.provisioningModel}')]`);
   }
   get checkInstanceType() {
-    return $("//div[contains(text(),'Instance type: n1-standard-8')]");
+    return $(`//div[contains(text(),'Instance type: ${computer.instanceType}')]`);
   }
   get checkDataCenterLocation() {
-    return $("//div[contains(text(),'Region: Frankfurt')]");
+    return $(`//div[contains(text(),'Region: ${computer.region}')]`);
   }
   get checkLocalSSD() {
-    return $("//div[contains(text(),'Local SSD: 2x375 GiB')]");
+    return $(`//div[contains(text(),'Local SSD: ${computer.localSSD}')]`);
   }
   get checkCommitmentTerm() {
-    return $("//div[contains(text(),'Commitment term: 1 Year')]");
+    return $(`//div[contains(text(),'Commitment term: ${computer.commitmentTerm}')]`);
   }
   get checkCostPerMonth() {
     return $("//b[contains(text(),'Total Estimated Cost')]");
