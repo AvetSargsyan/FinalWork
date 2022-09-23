@@ -14,6 +14,7 @@ describe("'Hardcore' task", () => {
   });
   it("Should wait the letter with the cost calculation and check that the Total Estimated Monthly Cost in the letter matches what is displayed in the calculator", async () => {
     const costPerMonth = await CloudPage.checkCostPerMonth.getText();
+    const cost = await costPerMonth.match(/[\d,.]+/g).shift();
     const calcPageUrl = await browser.getTitle();
     await browser.newWindow(TenMinuteMailPage.tenMinuteMailUrl);
     const temporaryMail = await TenMinuteMailPage.tenMinuteMail.getText();
@@ -34,7 +35,8 @@ describe("'Hardcore' task", () => {
     await browser.switchToFrame(frame3);
     await expect(TenMinuteMailPage.costInLetter).toBeExisting();
     const costPerMonthInLetter = await TenMinuteMailPage.costInLetter.getText();
-    await assert.strictEqual(costPerMonth.slice(22, 34), costPerMonthInLetter); //Because this isn't working  ->  await expect(costPerMonth).toHaveText(costPerMonthInLetter);
+    const costInLetter = await String(costPerMonthInLetter.match(/[\d,.]+/g));
+    await assert.strictEqual(cost, costInLetter);
     await browser.pause(2000);
   });
 });

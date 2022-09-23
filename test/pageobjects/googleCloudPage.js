@@ -1,5 +1,5 @@
 const Page = require("./page");
-const computer = require("../test-data/computer")
+const computer = require("../test-data/computer");
 class CloudPage extends Page {
   get frameOne() {
     return $("//devsite-iframe/iframe");
@@ -28,19 +28,21 @@ class CloudPage extends Page {
     return $("//md-select[@aria-owns='select_container_108']");
   }
   get regular() {
-    return $(`//md-option[@value='regular']/div[contains(text(),"${computer.provisioningModel}")]`); 
+    return $(
+      `//md-option[@value='regular']/div[contains(text(),"${computer.provisioningModel}")]`
+    );
   }
   get series() {
     return $("//md-select[@aria-owns='select_container_116']");
   }
   get n1() {
-    return $(`//div[contains(text(),"${computer.series}")]`);  
+    return $(`//div[contains(text(),"${computer.series}")]`);
   }
   get instanceType() {
     return $("//md-select[@aria-owns='select_container_118']");
   }
   get n1_standart() {
-    return $(`//md-option/div[contains(text(),"${computer.instanceType}")]`);  
+    return $(`//md-option/div[contains(text(),"${computer.instanceType}")]`);
   }
   get addGPUBtn() {
     return $("//md-checkbox[@ng-model='listingCtrl.computeServer.addGPUs']");
@@ -49,18 +51,18 @@ class CloudPage extends Page {
     return $("//md-select[@aria-owns='select_container_464']");
   }
   get teslaV100() {
-    return $(`//div[contains(text(),"${computer.type}")]`);     
+    return $(`//div[contains(text(),"${computer.type}")]`);
   }
   get numsOfGPU() {
     return $("//md-select[@aria-owns='select_container_466']");
   }
   get one() {
     return $(
-      "//md-option[@ng-repeat='item in listingCtrl.supportedGpuNumbers[listingCtrl.computeServer.gpuType]'][@value='1']" 
+      "//md-option[@ng-repeat='item in listingCtrl.supportedGpuNumbers[listingCtrl.computeServer.gpuType]'][@value='1']"
     );
   }
   get localSSD() {
-    return $("//md-select[@aria-owns='select_container_421']");                                              
+    return $("//md-select[@aria-owns='select_container_421']");
   }
   get twoX475gb() {
     return $(`//md-option/div[contains(text(),"${computer.localSSD}")]`);
@@ -77,7 +79,9 @@ class CloudPage extends Page {
     return $("//md-select[@aria-owns='select_container_131']");
   }
   get oneYear() {
-    return $(`//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(),"${computer.commitmentTerm}")]`);  
+    return $(
+      `//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(),"${computer.commitmentTerm}")]`
+    );
   }
   get addToEstimateBtn() {
     return $(
@@ -141,10 +145,14 @@ class CloudPage extends Page {
     await expect(this.checkCostPerMonth).toHaveTextContaining(costPerMonthData);
   }
   get checkVMClass() {
-    return $(`//div[contains(text(),'Provisioning model: ${computer.provisioningModel}')]`);
+    return $(
+      `//div[contains(text(),'Provisioning model: ${computer.provisioningModel}')]`
+    );
   }
   get checkInstanceType() {
-    return $(`//div[contains(text(),'Instance type: ${computer.instanceType}')]`);
+    return $(
+      `//div[contains(text(),'Instance type: ${computer.instanceType}')]`
+    );
   }
   get checkDataCenterLocation() {
     return $(`//div[contains(text(),'Region: ${computer.region}')]`);
@@ -153,7 +161,9 @@ class CloudPage extends Page {
     return $(`//div[contains(text(),'Local SSD: ${computer.localSSD}')]`);
   }
   get checkCommitmentTerm() {
-    return $(`//div[contains(text(),'Commitment term: ${computer.commitmentTerm}')]`);
+    return $(
+      `//div[contains(text(),'Commitment term: ${computer.commitmentTerm}')]`
+    );
   }
   get checkCostPerMonth() {
     return $("//b[contains(text(),'Total Estimated Cost')]");
